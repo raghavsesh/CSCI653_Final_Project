@@ -34,3 +34,4 @@ The goal of this project is thus to enable faster molecular dynamics by making N
 <li> Use <b> Rust </b> programming language for HPC --> Triple decker program? 
 <li> Analyze performance of Rust based implementation
 <li> Evaluate <i> "Usability" </i> of Rust for HPC
+<li> Learn Rust!
