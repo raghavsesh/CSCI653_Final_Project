@@ -6,6 +6,10 @@ Integer quantization has shown to provide up to 16x improvement over traditional
 The goal of this project is thus to enable faster molecular dynamics by making NN based solutions faster to execute. <br>
 
 
+## Current Status
+I was able to perform integer quantization for the TensorFlow model of Molecular Dynamics of G-Protein Coupled Receptors. This model was obtained from the works of (ICNNMD mentioned below).<br>
+Inference with the integer quantized model ran x faster than the FP32 version with same accuracy. This shows potential for integer quantization techniques to be adopted for NN based MD. <br><br>
+Further details on experiments are in the sections after proposal. 
 
 ## Challenges encountered
 <li> Most NN based MD solutions work with Graph Neural Networks. Quantization aware training for GNNs is still being researched
@@ -13,7 +17,7 @@ The goal of this project is thus to enable faster molecular dynamics by making N
 <li> No out-of-the-box quantization solutions for GNNs yet. (Similar alternatives are available for CNNs)
 <li> JAX to TF/PyTorch conversion requires deep understanding of the neural network, as anticipated
 
-## Further steps
+## Project Strategy
 <li> Attempting to run QAT for tensorflow based molecular dynamics of G-Protein-Coupled receptors (ICNNMD) -  https://pubs.acs.org/doi/abs/10.1021/acs.jcim.2c00085
 <li> ICNNMD code - https://github.com/Jane-Liu97/ICNNMD
 <li> Usage of frameworks like keras make it easier to work with
@@ -29,6 +33,13 @@ The goal of this project is thus to enable faster molecular dynamics by making N
 <li> Methods - NVidia QAT toolkit and run inference on NVidia's TensorRT framework
 
 ![image](https://user-images.githubusercontent.com/94656693/204929350-a0f12aeb-0b61-41a5-8dad-c92526d075cc.png)
+
+
+## Workflow Design
+By adopting the ICNNMD codebase, I was able to come up with the following high level workflow for the quantization task. 
+
+
+
 
 ## Other Curiosities
 <li> Use <b> Rust </b> programming language for HPC --> Triple decker program? 
